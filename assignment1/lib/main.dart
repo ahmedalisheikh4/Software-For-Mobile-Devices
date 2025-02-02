@@ -8,7 +8,7 @@ main() {
 }
 
 class Solution {
-  String filePath = 'C:/Users/HP/OneDrive/Desktop/K213211_SMD_A1/file.txt';
+  String filePath = 'file.txt';
 
   Map<int, Map<String, int>> lineWordCount = {}; // Word count per line
   Map<int, List<String>> lineMaxWords = {}; // Highest frequency words per line
@@ -30,7 +30,7 @@ class Solution {
         Map<String, int> wordCount = {}; // Word count for current line
 
         // Split the line into words
-        List<String> words = line.trim().split(RegExp(r'\s+'));
+        List<String> words = line.trim().toLowerCase().split(RegExp(r'\s+'));
         for (String word in words) {
           wordCount[word] = (wordCount[word] ?? 0) + 1;
           globalWordCount[word] = (globalWordCount[word] ?? 0) + 1;
